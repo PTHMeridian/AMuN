@@ -1,0 +1,272 @@
+{
+    "id": "bike-lanes-2026-04",
+    "scenario": "A city proposes replacing all downtown street parking with protected bike lanes.",
+    "category": "urban planning",
+    "opening": {
+      "prompt": "What happens first?",
+      "choices": [
+        {
+          "id": "property",
+          "text": "Property values near bike lanes change",
+          "leads_to": "depth-2-property"
+        },
+        {
+          "id": "business",
+          "text": "Local business foot traffic shifts",
+          "leads_to": "depth-2-business"
+        },
+        {
+          "id": "commute",
+          "text": "Car commuter journey times change",
+          "leads_to": "depth-2-commute"
+        }
+      ]
+    },
+    "nodes": {
+      "depth-2-property": {
+        "prompt": "Property values shift — then what?",
+        "choices": [
+          {
+            "id": "rent",
+            "text": "Rental prices in the area rise",
+            "leads_to": "depth-3-rent"
+          },
+          {
+            "id": "shops",
+            "text": "New cafes and shops open nearby",
+            "leads_to": "depth-3-shops"
+          },
+          {
+            "id": "displace",
+            "text": "Long-term residents feel priced out",
+            "leads_to": "depth-3-displace"
+          }
+        ]
+      },
+      "depth-2-business": {
+        "prompt": "Business foot traffic shifts — then what?",
+        "choices": [
+          {
+            "id": "delivery",
+            "text": "Delivery logistics become harder",
+            "leads_to": "depth-3-delivery"
+          },
+          {
+            "id": "browse",
+            "text": "Cycling customers spend more time browsing",
+            "leads_to": "depth-3-browse"
+          },
+          {
+            "id": "relocate",
+            "text": "Some businesses relocate to suburbs",
+            "leads_to": "depth-3-relocate"
+          }
+        ]
+      },
+      "depth-2-commute": {
+        "prompt": "Commuter times change — then what?",
+        "choices": [
+          {
+            "id": "transit",
+            "text": "Drivers shift to public transport",
+            "leads_to": "depth-3-transit"
+          },
+          {
+            "id": "congestion",
+            "text": "Road congestion worsens on parallel streets",
+            "leads_to": "depth-3-congestion"
+          },
+          {
+            "id": "cycling",
+            "text": "More people choose to cycle to work",
+            "leads_to": "depth-3-cycling"
+          }
+        ]
+      },
+      "depth-3-rent": {
+        "prompt": "Rents rise — then what?",
+        "choices": [
+          {
+            "id": "tax",
+            "text": "City tax revenue increases",
+            "leads_to": "done"
+          },
+          {
+            "id": "culture",
+            "text": "Community character changes",
+            "leads_to": "done"
+          },
+          {
+            "id": "housing",
+            "text": "Housing affordability pressure grows",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-shops": {
+        "prompt": "New shops open — then what?",
+        "choices": [
+          {
+            "id": "destination",
+            "text": "Area becomes a destination",
+            "leads_to": "done"
+          },
+          {
+            "id": "chains",
+            "text": "Chain stores follow independent ones",
+            "leads_to": "done"
+          },
+          {
+            "id": "evening",
+            "text": "Evening economy grows",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-displace": {
+        "prompt": "Residents feel priced out — then what?",
+        "choices": [
+          {
+            "id": "activism",
+            "text": "Community groups mobilise",
+            "leads_to": "done"
+          },
+          {
+            "id": "controls",
+            "text": "City considers rent controls",
+            "leads_to": "done"
+          },
+          {
+            "id": "sprawl",
+            "text": "Displacement accelerates",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-delivery": {
+        "prompt": "Deliveries get harder — then what?",
+        "choices": [
+          {
+            "id": "cargobike",
+            "text": "Cargo bikes become common",
+            "leads_to": "done"
+          },
+          {
+            "id": "online",
+            "text": "Online orders increase",
+            "leads_to": "done"
+          },
+          {
+            "id": "lobby",
+            "text": "Businesses lobby city council",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-browse": {
+        "prompt": "Cyclists browse longer — then what?",
+        "choices": [
+          {
+            "id": "indie",
+            "text": "Independent shops thrive",
+            "leads_to": "done"
+          },
+          {
+            "id": "spend",
+            "text": "Average spend per visit rises",
+            "leads_to": "done"
+          },
+          {
+            "id": "outdoor",
+            "text": "Cafes add outdoor seating",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-relocate": {
+        "prompt": "Businesses move out — then what?",
+        "choices": [
+          {
+            "id": "empty",
+            "text": "Empty storefronts appear downtown",
+            "leads_to": "done"
+          },
+          {
+            "id": "taxloss",
+            "text": "City loses local tax base",
+            "leads_to": "done"
+          },
+          {
+            "id": "suburban",
+            "text": "Suburban retail grows",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-transit": {
+        "prompt": "Drivers switch to transit — then what?",
+        "choices": [
+          {
+            "id": "buses",
+            "text": "Bus and metro demand rises",
+            "leads_to": "done"
+          },
+          {
+            "id": "upgrade",
+            "text": "City invests in transit upgrades",
+            "leads_to": "done"
+          },
+          {
+            "id": "cars",
+            "text": "Car ownership falls over time",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-congestion": {
+        "prompt": "Parallel streets congest — then what?",
+        "choices": [
+          {
+            "id": "protest",
+            "text": "Residents near those streets protest",
+            "leads_to": "done"
+          },
+          {
+            "id": "expand",
+            "text": "City extends bike lanes faster",
+            "leads_to": "done"
+          },
+          {
+            "id": "gps",
+            "text": "GPS apps reroute traffic everywhere",
+            "leads_to": "done"
+          }
+        ]
+      },
+      "depth-3-cycling": {
+        "prompt": "More people cycle — then what?",
+        "choices": [
+          {
+            "id": "bikes",
+            "text": "Bike shops and repair services boom",
+            "leads_to": "done"
+          },
+          {
+            "id": "injuries",
+            "text": "Cycling injury rates initially rise",
+            "leads_to": "done"
+          },
+          {
+            "id": "air",
+            "text": "Air quality improves measurably",
+            "leads_to": "done"
+          }
+        ]
+      }
+    },
+    "aggregate": {
+      "property-values": 43,
+      "business-traffic": 31,
+      "commuter-times": 26
+    }
+  }
